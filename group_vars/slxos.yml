@@ -1,0 +1,2 @@
+ansible_connection: network_cli # Only network_cli supported
+ansible_network_os: slxos

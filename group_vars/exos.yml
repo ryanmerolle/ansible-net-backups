@@ -1,0 +1,2 @@
+ansible_connection: network_cli # httpai also supported, but you need to configure it on the target switch first
+ansible_network_os: enos

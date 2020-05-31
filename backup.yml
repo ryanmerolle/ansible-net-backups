@@ -1,0 +1,25 @@
+- name: Switch config
+  connection: network_cli
+  hosts: all
+  gather_facts: no
+  vars:
+    backup_filename: "{{ inventory_hostname }}"
+    backup_directory: backups
+
+  vars_prompt:
+
+    # Assumes all the same user credentials to backup devices
+    # You can use vault, pass -e with the vars, or anything else if you want this run via cron or another scheduler.
+
+    - name: ansible_user
+      prompt: "User to connect to targets"
+      private: yes
+
+    - name: ansible_password
+      prompt: "Password to connect to targets"
+      private: yes
+
+  tasks:
+
+    - name: Backup Device
+      include: taskss/backup_cli_config.yml

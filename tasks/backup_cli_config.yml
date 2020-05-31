@@ -1,0 +1,6 @@
+- name: Backup Using cli_config module
+  cli_config:
+    backup: yes
+    backup_options:
+      filename: "{{ backup_filename }}"
+      dir_path: "{{ backup_directory }}"
